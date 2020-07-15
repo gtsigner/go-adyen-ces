@@ -46,11 +46,11 @@ func TestAdyen_Encrypt(t *testing.T) {
     yen := NewAdYen(rsaKey)
     yen.debug()
     res, err := yen.Encrypt(CardForm{
-        Number:          "5524335269231268",
-        Holder:          "iwan don",
-        Cvv:             "967",
-        ExpiryMonth:     "11",
-        ExpiryYear:      "2025",
+        Number:          "xx",
+        Holder:          "xx don",
+        Cvv:             "x",
+        ExpiryMonth:     "x",
+        ExpiryYear:      "x",
         CardType:        "VISA",
         PaymentMethodId: "CREDIT_CARD",
         Referer:         "https://www.yeezysupply.com/payment",
@@ -63,11 +63,11 @@ func BenchmarkAdyen_Encrypt(b *testing.B) {
     yen := NewAdYen(rsaKey)
     for v := 0; v < b.N; v++ {
         _, _ = yen.Encrypt(CardForm{
-            Number:          "5524335269231268",
+            Number:          "x",
             Holder:          "iwan don",
-            Cvv:             "967",
-            ExpiryMonth:     "11",
-            ExpiryYear:      "2025",
+            Cvv:             "x",
+            ExpiryMonth:     "x",
+            ExpiryYear:      "xx",
             CardType:        "VISA",
             PaymentMethodId: "CREDIT_CARD",
             Referer:         "https://www.yeezysupply.com/payment",
